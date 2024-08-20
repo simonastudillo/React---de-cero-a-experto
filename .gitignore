@@ -1,1 +1,9 @@
-node_modules
+# Dependencias
+/node_modules
+
+# Produccion
+/build
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
