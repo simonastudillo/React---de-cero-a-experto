@@ -8,30 +8,25 @@ const newMessage = {
 const imprimeObjeto = (objeto) => JSON.stringify(objeto);
 
 export const FirstApp = ({
-  title,
-  subTitle,
-  name
+  name = 'Simón Astudillo',
+  subTitle = 'No hay subtitulo',
+  title
 }) => {
 
   // if (!title) throw new Error('Titulo no existe');
-
+  // console.log(subTitle);
   return (
     <>
-      <h1>{title} <small>{name}</small></h1>
-      <code>{imprimeObjeto(newMessage)}</code>
-      {/* <code>{newMessage}</code> */}
-      <p>{subTitle + 1}</p>
+      <h1 data-testid="test-title">{title}</h1>
+      <p>{subTitle}</p>
+      <p>{subTitle}</p>
+      <p>{name}</p>
     </>
   )
 }
 
 FirstApp.propTypes = {
   name: PropTypes.string,
-  subTitle: PropTypes.number.isRequired,
+  subTitle: PropTypes.string,
   title: PropTypes.string.isRequired,
-}
-FirstApp.defaultProps = {
-  name: 'Simón Astudillo',
-  subTitle: 'No hay subtitulo',
-  title: 'No hay título',
 }

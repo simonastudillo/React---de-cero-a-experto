@@ -3,6 +3,9 @@
 
 # Produccion
 /build
+/dist
+/dist-ssr
+/tests
 
 # Editor directories and files
 .vscode/*

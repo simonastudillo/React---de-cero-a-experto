@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
-export const CounterApp = ({ value }) => {
+export const CounterApp = ({ value = 0 }) => {
 
   const [contador, setContador] = useState(value);
 
@@ -15,11 +15,10 @@ export const CounterApp = ({ value }) => {
   return (
     <>
       <h1>CounterApp</h1>
-      <h2> {value} </h2>
-      <h3>{contador}</h3>
+      <h2>{contador}</h2>
       <button onClick={suma}>+1</button>
       <button onClick={resta}>-1</button>
-      <button onClick={reset}>Reset</button>
+      <button aria-label='btn-reset' onClick={reset}>Reset</button>
     </>
   );
 }
@@ -27,7 +26,4 @@ export const CounterApp = ({ value }) => {
 
 CounterApp.propTypes = {
   value: PropTypes.number.isRequired
-}
-CounterApp.defaultProps = {
-  value: 0,
 }
