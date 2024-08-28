@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from 'prop-types';
 
 export const AddCategory = ({ onNewCategory }) => {
   // Estados
@@ -11,6 +12,7 @@ export const AddCategory = ({ onNewCategory }) => {
   // Envia el valor al parent
   const onSubmit = (e) => {
     e.preventDefault();
+    // console.log('onSubmit');
     // Limpiamos el input
     const newInputValue = inputValue.trim();
     // Enviamos el valor al parent
@@ -22,7 +24,7 @@ export const AddCategory = ({ onNewCategory }) => {
   };
   // render
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} aria-label="form-add-category">
       <input
         type="text"
         placeholder="Busca tus gifs favoritos"
@@ -32,6 +34,7 @@ export const AddCategory = ({ onNewCategory }) => {
     </form>
   )
 }
-// AddCategory.prototype = {
-//   setCategories: PropTypes.func.isRequired
-// }
+
+AddCategory.propTypes = {
+  onNewCategory: PropTypes.func.isRequired,
+}
